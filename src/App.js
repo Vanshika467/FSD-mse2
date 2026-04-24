@@ -54,11 +54,11 @@ export default function App() {
 
   function updateQty(id, qty) {
     if (qty < 1) return;
-    setCartItems(prev => prev.map(i => i.id === id ? { ...i, qty } : i)); //  'count' property use ho rahi thi jo exist nahi karti thi
-    // Actual property 'qty' hai, isliye usko use kiya for correct cart count
+    setCartItems(prev => prev.map(i => i.id === id ? { ...i, qty } : i)); 
   }
 
-  const cartCount = cartItems.reduce((sum, i) => sum + i.qty, 0);
+  const cartCount = cartItems.reduce((sum, i) => sum + i.qty, 0); //  'count' property use ho rahi thi jo exist nahi karti thi
+  // Actual property 'qty' hai, isliye usko use kiya for correct cart count
   const cartItemIds = new Set(cartItems.map(i => i.id));//  'productId' use ho raha tha jo cart item me exist nahi karta
   // Correct property 'id' use kiya taaki inCart status properly detect ho aur button update ho
 
